@@ -1,0 +1,53 @@
+.wrapperBanner {
+  padding: 200px 120px 0 120px;
+  .banner-left {
+    img {
+      width: 459px;
+      height: 653px;
+    }
+    .info {
+      .title-line {
+        margin: 20px 0;
+        width: 45px;
+        height: 1px;
+        background-color: #000;
+      }
+      .info_title {
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .info__content {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .banner-right {
+    img {
+      width: 459px;
+      height: 307px;
+    }
+    .content__right {
+      .title {
+        h3 {
+          margin: 45px 0 0 0;
+          text-transform: uppercase;
+          font-family: "Roboto Black";
+          font-weight: 900 !important;
+          letter-spacing: 2px;
+          color: #1a1a1a;
+          font-size: 2rem;
+        }
+        .des {
+        
+          text-align: center;
+          max-width: 300px;
+          margin: 0 auto;
+          color: #666;
+          line-height: 1.5;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}
