@@ -1,9 +1,22 @@
+@import "./Helper/var";
+@import "./Helper/mixin";
+@import "./base/reset";
 @import "./layout/sidebar";
+@import "./layout/special";
+@import "./layout/bannerBottom";
+@import "./layout/footer";
 @import "./layout/banner";
 @import "./layout/bestSeller";
-
-
-@import "./base/reset";
-@import "./helper/variable";
-@import "./helper/mixin";
 @import "./layout/carousel";
+
+
+@import "./component/breadcrumb";
+@import "./component/titlePage";
+@import "./component/productItem";
+@import "./component/topCart";
+
+
+
+
+
+

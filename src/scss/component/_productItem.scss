@@ -1,0 +1,49 @@
+.product__item {
+    border: 1px solid #fff;
+    transition: ease-in-out 0.3s;
+    padding: 20px;
+
+    &:hover {
+      border: 1px solid #000;
+      .goToDetailPage {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .product_des {
+      .title-line {
+        @include title-line;
+      }
+      .textBold {
+        @include text(#1a1a1e, 0.8rem, bold);
+        text-transform: uppercase;
+      }
+      .product__price {
+        @include text(#1a1a1e, 0.8rem, 100);
+      }
+    }
+
+    .goToDetailPage {
+      margin-top: 20px;
+      color: #000;
+      border: none;
+      outline: none;
+      background-color: #fff;
+      border: 1px solid #000;
+      transition: linear 0.1s;
+      visibility: hidden;
+      width: 100%;
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+    .quickBuy {
+      @extend .goToDetailPage;
+      background-color: #000;
+      color: #fff;
+    }
+  }

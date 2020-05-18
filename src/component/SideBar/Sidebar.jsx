@@ -1,11 +1,70 @@
 import React, { Component } from "react";
 import ItemCategory from "./ItemCategory";
+const arrCatefory = [
+  {
+    name: "MID SEASON SALE",
+    route: "/",
+    cate: ["outerwear", "Sweatshirts & Knitwear", "Polo Shirts"],
+  },
+  {
+    name: "travel",
+    route: "travel",
+    cate: [
+      "Backpack & Bags",
+      "Leather Goods",
+      "Small Leather Goods",
+      "Trolley",
+    ],
+  },
+  {
+    name: "men collection",
+    route: "mencollection",
+    cate: [
+      "Backpack & Bags",
+      "Leather Goods",
+      "Small Leather Goods",
+      "Trolley",
+    ],
+  },
+  {
+    name: "accessories",
+    route: "accessories",
+    cate: ["leathergoods", "leathergoods"],
+  },
+  {
+    name: "baby & junior",
+    route: "baby",
+    cate: ["outerwear", "leathergoods"],
+  },
+  {
+    name: "Collectibles",
 
+    route: "collectibles",
+    cate: ["outerwear", "leathergoods"],
+  },
+  {
+    name: "Squadra Corse",
+
+    route: "Squadra",
+    cate: ["outerwear", "leathergoods"],
+  },
+  {
+    name: "Shop By Car",
+
+    route: "shopbycar",
+    cate: ["Terzo Millennio", "Urus", "Huracán", "Aventador"],
+  },
+  {
+    name: "Special Edition",
+    route: "special",
+    cate: ["outerwear", "leathergoods"],
+  },
+];
 class Sidebar extends Component {
   showCate() {
     let result = [];
     for (let i = 0; i < 9; i++) {
-      result.push(<ItemCategory />);
+      result.push(<ItemCategory key={i} categoryItem={arrCatefory[i]} />);
     }
     return result;
   }
@@ -31,12 +90,12 @@ class Sidebar extends Component {
           </li>
           <li className="listSocial--item">
             <span>
-              Newsletter <i class="fa fa-caret-down"></i>{" "}
+              Belgium <i className="fa fa-caret-down" />{" "}
             </span>
           </li>
           <li className="listSocial--item">
             <span>
-              Newsletter <i class="fa fa-caret-down"></i>{" "}
+              English <i className="fa fa-caret-down" />{" "}
             </span>
           </li>
           <li className="  social listSocial--item">

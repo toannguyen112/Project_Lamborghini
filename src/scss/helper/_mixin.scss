@@ -1,4 +1,48 @@
-@mixin sizeImg($width ,$height) {
-    width: $width;
-    height: $height;
+// Text
+@mixin text($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+@mixin button {
+  margin-top: 20px;
+  color: #000;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #000;
+  transition: linear 0.1s;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+@mixin alignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin sizeImg($w, $h) {
+  width: $w;
+  height: $h;
+}
+@mixin title-line {
+  margin: 20px 0;
+  width: 45px;
+  height: 1px;
+  background-color: #000000;
 }

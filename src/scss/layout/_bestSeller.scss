@@ -1,0 +1,10 @@
+.warpperBest {
+ 
+  .warpperBest__title {
+    text-align: center;
+    @include text(#1a1a1e, 1.5rem, 400);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+ 
+}

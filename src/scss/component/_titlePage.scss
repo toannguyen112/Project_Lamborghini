@@ -1,0 +1,26 @@
+.titlePage {
+    padding: 40px;
+  .titlePage__text {
+    text-align: center;
+    @include text(#000, 2rem, 400);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .typeDisplay {
+    @include text(#000, 0.7rem, 700);
+    letter-spacing: 2px;
+    text-decoration: underline;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+    }
+  }
+}

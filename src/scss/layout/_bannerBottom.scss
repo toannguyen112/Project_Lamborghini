@@ -1,0 +1,32 @@
+.wrapperBannerBottom {
+  padding: 150px 120px 0 120px;
+ 
+  .bannerBottomItem {
+    .bannerBotImg {
+      overflow: hidden;
+      img {
+        transition: ease-in-out 0.3s;
+        transform: scale(1);
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+   
+
+    .line-title {
+      @include title-line;
+    }
+    .info {
+      .dis {
+        margin: 0;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .sub {
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,14 +1,36 @@
-import React, { Fragment } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import "./scss/main.scss";
-import Wrapper from "./page/Wrapper";
 import Sidebar from "./component/SideBar/Sidebar";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
+import routes from "./routes/routes";
+import TopCart from "./component/TopCart/TopCart";
 
-function App() {
-  return <Fragment>
-    <Sidebar />
-    <Wrapper />
-  </Fragment>
+export default class App extends Component {
+  showRoutes = (routes) => {
+    let result = null;
+    if (routes.length > 0) {
+      result = routes.map((route, index) => {
+        return (
+          <Route key={index} exact path={route.path} component={route.main} />
+        );
+      });
+    }
+
+    return result;
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Sidebar />
+          <TopCart/>
+          <Switch>
+            {this.showRoutes(routes)}
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
-
-export default App;
