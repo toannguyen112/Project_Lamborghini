@@ -20,7 +20,7 @@ export default class TravelPage extends Component {
     render() {
         return (
             <div className="warpperBodyRigth">
-                <Breadcrumb />
+                <Breadcrumb title={"TRAVEL"}  />
                 <TitlePage  title={"travel"} />
                 <div className="container-fluid" style={{ paddingRight: "150px" }} >
                     <div className="row">{this.showProduct()}</div>

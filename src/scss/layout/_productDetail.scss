@@ -1,0 +1,109 @@
+.wrapperDetail {
+  .wrapperDetail--left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .wrap {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      line-height: 1.2rem;
+      max-width: 320px;
+      letter-spacing: 2px;
+      .textBold {
+        @include text(#000, 12px, 700);
+        text-decoration: underline;
+      }
+      .socialIcon {
+        text-align: center;
+        i {
+          margin: 10px;
+        }
+      }
+    }
+  }
+  .wrapperDetail--center {
+    .productImg {
+      width: 567px;
+      height: 761px;
+    }
+  }
+  .wrapperDetail--right {
+    height: 100%;
+    @include alignCenter;
+    justify-content: center;
+    .wrap-content {
+      width: 100%;
+      text-align: center;
+      line-height: 1rem;
+      margin-bottom: 50%;
+
+      .name {
+          margin: 0 10px;
+        @include text(#000, 10px, 700);
+        letter-spacing: 2px;
+      }
+      .code {
+        @include text(#000, 10px, 400);
+        letter-spacing: 2px;
+      }
+      .price {
+        margin-top: 10px;
+        @include text(#000, 10px, 100);
+        letter-spacing: 2px;
+      }
+      .legal-disclaimer {
+        margin: 20px 0;
+        @extend .price;
+      }
+      .form-group {
+        text-align: left;
+        label {
+         text-transform: uppercase;
+          @include text(#000, 12px, 400);
+        }
+        .custom-select {
+          border: 1px solid #000;
+          border-radius: 0;
+          font-size: 12px;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      .chooseColor {
+        text-align: left;
+        .color {
+          @include text(#000, 12px, 400);
+        }
+        .form-check {
+          img {
+            cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            padding: 2px;
+            width: 17px;
+            height: 17px;
+          }
+          img.active {
+            border: 1px solid #000;
+          }
+        }
+      }
+      .addToCart {
+        @include addToCart;
+      }
+      .warp_addWish {
+        text-align: center;
+        .addWish {
+          display: inline-block;
+          padding: 10px 5px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          @include text(#000, 10px, 700);
+          border-bottom: 1px solid #000;
+        }
+      }
+    }
+  }
+}

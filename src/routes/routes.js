@@ -3,6 +3,7 @@ import React from 'react'
 import HomePage from '../page/HomePage'
 import TravelPage from '../page/TravelPage'
 import MenCollection from '../page/MenCollection';
+import ProductDetailPage from '../page/ProductDetailPage';
 const routes = [
 
     {
@@ -19,6 +20,11 @@ const routes = [
         path: "/mencollection",
         exact: true,
         main: () => <MenCollection />,
+    },
+    {
+        path: "/product",
+        exact: true,
+        main: () => <ProductDetailPage />,
     },
    
 ]

@@ -8,13 +8,88 @@ ul {
 .warpperBodyRigth {
   margin-left: 240px;
 }
-
+p {
+  margin: 0;
+}
 a {
   color: #ffffff;
+  text-decoration: none;
   &:hover {
     color: #ffffff;
-    border-bottom: 1px solid #ac8b44;
-
     text-decoration: none;
   }
+}
+.overPlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  z-index: -9;
+  animation: showOverPlay ease-in-out 0.3s;
+}
+@keyframes showOverPlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.owl-theme {
+  position: relative;
+  .owl-nav {
+    .owl-prev {
+      position: absolute;
+      left: -3%;
+      top: 45%;
+      outline: none;
+      color: #000;
+      span {
+        font-size: 30px;
+      }
+      &:hover {
+        background-color: #ffffff!important;
+        color: #000000!important;
+      }
+    }
+    .owl-next {
+      position: absolute;
+      right: -3%;
+      top: 45%;
+      outline: none;
+      color: #000;
+      span {
+        font-size: 30px;
+      }
+      &:hover {
+        background-color: #ffffff!important;
+        color: #000000!important;
+      }
+    }
+  }
+  .owl-dots {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

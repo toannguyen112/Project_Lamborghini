@@ -10,7 +10,7 @@ export default class BestSeller extends Component {
       <div className="warpperBest">
         <h3 className="warpperBest__title">best sellers</h3>
         <div className="warpperBest__products">
-          <OwlCarousel className="owl-theme" loop items={4}  >
+          <OwlCarousel className="owl-theme" loop items={4} nav  >
             <ProductItem />
           </OwlCarousel>
 
