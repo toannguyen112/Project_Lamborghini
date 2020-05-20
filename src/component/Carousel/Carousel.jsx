@@ -12,7 +12,7 @@ export default class Carousel extends Component {
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                    <img src="https://static.lamborghinistore.com/media/widgets/resized/1700x/LMB-3132-Desk.jpg" alt="..." />
+                    <img    src="https://static.lamborghinistore.com/media/widgets/resized/1700x/LMB-2591-desk.jpg" alt="..." />
                         <div className=" caption ">
                             <h3 className="namepr">
                                 Huracán

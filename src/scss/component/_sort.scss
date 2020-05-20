@@ -1,0 +1,80 @@
+.wrapperSort {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px 0;
+  .filterBy {
+    @include button;
+    padding: 5px 30px;
+    font-size: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    animation: filter linear 0.5s;
+  }
+  .orderBy {
+    @extend .filterBy;
+    animation: sortBy linear 0.5s;
+  }
+  .filterChoosen{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0 ;
+    left: 0;
+    text-align: left;
+    padding: 200px 0 0 0;
+    margin-left: 240px;
+    background-color: #fff;
+    z-index: 2;
+    transform: translateY(-100%);
+    transition: ease-in-out 0.5s;
+    .close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .titleFilter{
+      @include text(#000,10px ,100 );
+      margin-bottom: 30px;
+    }
+    .filterChoosen__list{
+      .listCateforyFilter__item{
+        @include text(#000,10px ,100 );
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.5rem;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+
+      }
+      .cateMain{
+      @include text(#000,10px ,bold )
+
+      }
+    }
+  }
+}
+
+@keyframes filter {
+  from {
+    margin-right: 50px;
+  }
+  to {
+    margin: 0 10px;
+
+  }
+}
+@keyframes sortBy {
+  from {
+    margin-left: 50px;
+  }
+  to {
+    margin: 0 10px;
+
+  }
+}
+

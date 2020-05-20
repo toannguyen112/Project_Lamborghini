@@ -1,0 +1,74 @@
+.warpperBodyRigth {
+  .registerAlert {
+    background-color: #e6e6e6;
+    padding: 20px 100px;
+    margin-top: 10px;
+    .register {
+      text-align: center;
+      @include text(#000, 20px, 400);
+    }
+    .registerAlert__bot {
+      margin-top: 20px;
+      .text {
+        @include text(#000, 12px, 400);
+        letter-spacing: 2px;
+      }
+      .register {
+        @include buttonBgBlack;
+      }
+    }
+  }
+  .loginTitle {
+    padding: 20px 0;
+    text-align: center;
+    @include text(#000, 20px, 400);
+  }
+  .formLogin {
+    border-bottom: 1px solid #e6e6e6;
+
+    padding: 20px 100px;
+
+    .form-group {
+      .form-control {
+        border: 1px solid #000;
+        border-radius: 0;
+      }
+    }
+    .btnLogin {
+      margin-top: 30px;
+      @include buttonBgBlack;
+      text-align: center;
+    }
+  }
+  .WithAmazon {
+    padding: 20px 0;
+    text-align: center;
+    .WithAmazon__title {
+      @include text(#000, 20px, 400);
+    }
+    .WithAmazon__des {
+      font-size: 11px;
+    }
+    .imgAmazon {
+      padding: 40px 0;
+    }
+  }
+  .loginWithSocial {
+    text-align: center;
+    .loginWithSocial__title {
+      @include text(#000, 20px, 400);
+    }
+    .buttonSocial {
+      .des_text {
+        @include text(#000, 12px, 400);
+      }
+
+      .btnGG {
+        @include btnGG;
+      }
+      .btnface {
+        @include btnFace;
+      }
+    }
+  }
+}

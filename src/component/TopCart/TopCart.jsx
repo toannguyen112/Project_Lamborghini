@@ -8,8 +8,15 @@ export default class TopCart extends Component {
     this.state = {
       show: false,
       type: "cart",
+      search: false,
     };
   }
+
+  showSearch = () => {
+    this.setState({
+      search: !this.state.search,
+    });
+  };
 
   showSidebarCartWhislist = (value) => {
     this.setState({
@@ -25,8 +32,8 @@ export default class TopCart extends Component {
         onClick={() => this.showSidebarCartWhislist()}
       ></div>
     ) : (
-      ""
-    );
+        ""
+      );
   };
 
   render() {
@@ -49,8 +56,15 @@ export default class TopCart extends Component {
             <span className="qty">1</span>
           </li>
 
-          <li className="item search ">
+          <li className="item search " onClick={() => this.showSearch()}>
+            <input
+              type="text"
+              placeholder="Search"
+              className="inputSearch"
+              style={{ width: this.state.search ? "165px" : " " }}
+            ></input>
             <i className="fa fa-search" />
+           
           </li>
         </ul>
         <div
@@ -94,11 +108,47 @@ export default class TopCart extends Component {
               </div>
             </div>
           ) : (
-            <p className="alert">
-              {" "}
+              <p className="alert">
+                {" "}
               YOU HAVE NO ITEMS IN YOUR SHOPPING WHISLIST.
-            </p>
-          )}
+              </p>
+            )}
+        </div>
+        {/* searchList */}
+
+        <div className="wrappSearchItem">
+        <ul className="searchList">
+              <li className="searchList--item">
+                <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
+                <div className="name">
+                  Flyknit-technique sock shoe
+                </div>
+                <div className="price">
+                  € 132.00
+                </div>
+              </li>
+              <li className="searchList--item">
+                <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
+                <div className="name">
+                  Flyknit-technique sock shoe
+                </div>
+                <div className="price">
+                  € 132.00
+                </div>
+              </li>
+              <li className="searchList--item">
+                <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
+                <div className="name">
+                  Flyknit-technique sock shoe
+                </div>
+                <div className="price">
+                  € 132.00
+                </div>
+              </li>
+            </ul>
+            <div className="allResoure">
+              all resoure
+            </div>
         </div>
 
         {this.showOverPlay()}

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 export default class Banner extends Component {
     render() {
+        let {img} =this.props;
+        console.log(img);
+        
         return (
             <div className="wrapperBanner">
                 <div className="container">
@@ -9,7 +12,7 @@ export default class Banner extends Component {
                         <div className="col-6">
 
                             <div className="banner-left">
-                                <img src="https://static.lamborghinistore.com/media/widgets/resized/590x/LMB-2327-cnew.jpg" alt="" />
+                                <img src= {img.img1} alt="" />
                                 <div className="info">
                                     <div className="title-line"></div>
                                     <p className="info_title">
@@ -19,14 +22,14 @@ export default class Banner extends Component {
                                         SPECIAL MIZUNO 1906 EDITION
                                 </p>
                                     <p className="info__content" >
-                                        SPECIAL MIZUNO 1906 EDITION
+                                        Discover the collection
                                 </p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="banner-right">
-                                <img src="https://static.lamborghinistore.com/media/widgets/resized/590x/LMB-2305-590x394.jpg" alt="" />
+                                <img src={img.img2} alt="" />
                                 <div className="content__right">
                                     <div className="title">
                                         <h3>MIZUNO FOR AUTOMOBILI LAMBORGHINI</h3>

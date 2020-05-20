@@ -32,6 +32,7 @@
         }
         .nav-container-backlayer {
           display: block;
+          opacity: 1;
         }
       }
 
@@ -45,7 +46,8 @@
         padding: 200px 0;
         background-color: #20201f;
         transition: ease-in-out 1s;
-        z-index: 99;
+        z-index: 9;
+        opacity: 0;
       }
     }
     .item--category_link:first-child {
@@ -57,11 +59,20 @@
       .nav-container-backlayer-list {
         .nav-container-backlayer-list-item {
           padding: 10px;
-
+          opacity: 1;
+          animation: show linear 1.3s;
           &:hover {
             .nav-container-backlayer-list-item_link {
               border-bottom: 1px solid #dfb400;
             }
+          }
+        }
+        @keyframes show {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
           }
         }
       }

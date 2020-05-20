@@ -1,5 +1,6 @@
 .titlePage {
-    padding: 40px;
+  padding: 40px 0;
+  animation: move linear 0.2s;
   .titlePage__text {
     text-align: center;
     @include text(#000, 2rem, 400);
@@ -14,7 +15,7 @@
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
-    
+
     &::after {
       position: absolute;
       bottom: 0;
@@ -22,5 +23,14 @@
       background-color: #333;
       width: 100%;
     }
+  }
+}
+
+@keyframes move {
+  from {
+    margin-bottom: 50px;
+  }
+  to {
+    margin: 0;
   }
 }

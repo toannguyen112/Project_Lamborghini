@@ -1,0 +1,67 @@
+.wrapper__resgiter {
+  .Wrap__formRegister {
+    border: 1px solid #e6e6e6;
+    padding: 20px;
+    .title {
+      text-align: center;
+      @include text(#000, 20px, 400);
+    }
+    .formRes {
+      .wrapForm {
+        label {
+          font-size: 10px;
+        }
+        .genger {
+          @extend label;
+          margin-bottom: 10px;
+        }
+        .form-group {
+          .wrapDate {
+            justify-content: space-around;
+            select {
+              width: 30%;
+            }
+          }
+        }
+        .password {
+          margin-top: 35px;
+        }
+      }
+      .wrapButton {
+        .back {
+          @include button;
+          text-align: center;
+          padding: 10px !important;
+          font-size: 8px !important;
+        }
+        .submit {
+           @extend .back;
+           background-color: #000;
+           color: #fff;
+        }
+      }
+    }
+  }
+  .wrap__fastLogin {
+    .title_fast {
+      @include text(#000, 20px, 400);
+      text-align: center;
+    }
+    .wraperBtn {
+      text-align: center;
+      .res {
+        margin: 20px 0;
+        @include btnGG;
+      }
+      .accedi {
+        @include btnFace;
+      }
+    }
+    .des {
+      @include text(#000, 12px, 100);
+      margin: 10px 20px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+  }
+}

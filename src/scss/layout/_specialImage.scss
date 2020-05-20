@@ -1,0 +1,37 @@
+.SpecialContent {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  .SpecialContent__img {
+    img {
+      transition: ease-in-out 1s;
+      transform: scale(1);
+      width: 100%;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .wrap_text {
+    @include text(#fff, 15px, 700);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .discover {
+      margin-top: 20px;
+      border: 1px solid #fff;
+      @include text(#fff, 10px, 700);
+      transition: ease-in-out, 0.5s;
+      padding: 10px 60px;
+      background-color: transparent;
+      &:hover {
+        background: #fff;
+        color: #dfb400;
+        border: 1px solid #dfb400;
+      }
+    }
+  }
+}

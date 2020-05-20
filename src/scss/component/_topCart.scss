@@ -41,6 +41,20 @@
       }
     }
   }
+  .search {
+    position: relative;
+    align-items: center;
+    .inputSearch {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 0;
+      height: 100%;
+      transition: ease-in-out 0.5s;
+      outline: none;
+      border: none;
+    }
+  }
 
   .box {
     position: fixed;
@@ -127,6 +141,38 @@
           margin-bottom: 10px;
         }
       }
+    }
+  }
+  .wrappSearchItem {
+    position: fixed;
+    top: 120px;
+    width: 180px;
+    right: 1%;
+    bottom: 0;
+    padding: 5px;
+    box-shadow: 0 0 0 0.4;
+    background-color: #fff;
+    .searchList {
+      max-height: 520px;
+      overflow-y: auto;
+      .searchList--item {
+        text-align: center;
+        padding: 20px;
+        &:hover {
+          background-color: #f9f5f0;
+        }
+        .name {
+          @include text(#000, 12px, bold);
+        }
+        .price {
+          @include text(#000, 10px, 100);
+        }
+      }
+    }
+    .allResoure{
+      @include button;
+      text-align: center;
+      font-size: 10px;
     }
   }
 }

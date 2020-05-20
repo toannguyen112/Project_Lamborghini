@@ -1,0 +1,1 @@
+ export const CHANGE__VIEW = 'CHANGE__VIEW'

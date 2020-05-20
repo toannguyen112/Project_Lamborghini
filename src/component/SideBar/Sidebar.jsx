@@ -46,7 +46,7 @@ const arrCatefory = [
   {
     name: "Squadra Corse",
 
-    route: "Squadra",
+    route: "squadra",
     cate: ["outerwear", "leathergoods"],
   },
   {
@@ -74,13 +74,13 @@ class Sidebar extends Component {
     return (
       <div className="warpperSidebar">
         <div className="logo">
-         <Link to="/" style={{ textDecoration : "none" }} >
-          <img
+          <Link to="/" style={{ textDecoration: "none" }} >
+            <img
               className="logo__img"
               src="https://www.lamborghinistore.com/skin/frontend/lamborghini/responsive/img/logo.png"
               alt=""
             />
-         </Link>
+          </Link>
         </div>
         <ul className="listCategory">{this.showCate()}</ul>
 
@@ -88,9 +88,11 @@ class Sidebar extends Component {
           <li className="listSocial--item">
             <span>Newsletter</span>
           </li>
-          <li className="listSocial--item">
-            <span>my account</span>
-          </li>
+          <Link to="/login">
+            <li className="listSocial--item" >
+              <span>my account</span>
+            </li>
+          </Link>
           <li className="listSocial--item">
             <span>
               Belgium <i className="fa fa-caret-down" />{" "}
