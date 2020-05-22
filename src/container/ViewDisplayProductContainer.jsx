@@ -2,33 +2,45 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ProductItem from "../component/ProductItem/ProductItem";
 import ViewDisplayProduct from "../component/ViewDisplayProduct/ViewDisplayProduct";
-
+import * as action from "../Store/Action/action";
 export class ViewDisplayProductContainer extends Component {
   render() {
-    let { view } = this.props;
-    console.log(view);
+    let { view, productsList, productType, history } = this.props;
+    console.log(productsList);
 
-    return <ViewDisplayProduct>{this.showProductItem()}</ViewDisplayProduct>;
+    return (
+      <ViewDisplayProduct>
+        {this.showProductItem(view, productsList, productType, history)}
+      </ViewDisplayProduct>
+    );
   }
 
-  showProductItem = () => {
+  showProductItem = (view, productsList, productType, history) => {
     let result = [];
-    for (let i = 0; i < 8; i++) {
-      if(!this.props.view) {
-        result.push(
-          <div className="col-md-3 col-sm-12" key={i}>
-            <ProductItem />
-          </div>
-        );
+    for (let i = 0; i < productsList.length; i++) {
+      if (productsList[i].type === productType) {
+        if (!view) {
+          result.push(
+            <div className="col-md-3 col-sm-12" key={i}>
+              <ProductItem
+                addToCart={this.props.addToCart}
+                history={history}
+                product={productsList[i]}
+              />
+            </div>
+          );
+        } else {
+          result.push(
+            <div className="col-md-6 col-sm-12" key={i}>
+              <ProductItem
+                addToCart={this.props.addToCart}
+                history={history}
+                product={productsList[i]}
+              />
+            </div>
+          );
+        }
       }
-      else {
-        result.push(
-          <div className="col-md-6 col-sm-12" key={i}>
-            <ProductItem />
-          </div>
-        );
-      }
-     
     }
 
     return result;
@@ -37,9 +49,16 @@ export class ViewDisplayProductContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    view: state.TypeDisplayView
+    view: state.TypeDisplayView,
+    productsList: state.Products,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (cart) => {
+      dispatch(action.addToCart(cart));
+    },
   };
 };
 
-
-export default connect(mapStateToProps,null)(ViewDisplayProductContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ViewDisplayProductContainer);

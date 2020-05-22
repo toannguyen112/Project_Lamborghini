@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProductItem from '../ProductItem/ProductItem'
+import  BestSellerContainer  from '../../container/BestSellerContainer'
 
 export default class Like extends Component {
     render() {
@@ -9,20 +10,8 @@ export default class Like extends Component {
                 YOU MAY ALSO LIKE
                     </h3>
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-md-3 col-sm-12">
-                            <ProductItem />
-                        </div>
-                        <div className="col-md-3 col-sm-12">
-                            <ProductItem />
-                        </div>
-                        <div className="col-md-3 col-sm-12">
-                            <ProductItem />
-                        </div>
-                        <div className="col-md-3 col-sm-12">
-                            <ProductItem />
-                        </div>
-                    </div>
+                 <BestSellerContainer  history={this.props.history}  productType={"bestSeller"} />
+
                 </div>
 
             </div>

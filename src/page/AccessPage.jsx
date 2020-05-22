@@ -12,7 +12,7 @@ export default class AccessPage extends Component {
       <div className="warpperBodyRigth">
         <Breadcrumb title={"ACCESSORIES"} />
         <TitlePageContainer  title={"ACCESSORIES"}  />
-        <ViewDisplayProductContainer />
+        <ViewDisplayProductContainer history={this.props.history}   productType={"accessories"} />
       </div>
     );
   }

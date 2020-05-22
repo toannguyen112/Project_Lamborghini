@@ -1,49 +1,70 @@
 .product__item {
-    border: 1px solid #fff;
-    transition: ease-in-out 0.3s;
-    padding: 20px;
+  border: 1px solid #fff;
+  padding: 20px;
+  cursor: pointer;
 
-    &:hover {
-      border: 1px solid #000;
-      .goToDetailPage {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-    .product_des {
-      .title-line {
-        @include title-line;
-      }
-      .textBold {
-        @include text(#1a1a1e, 0.8rem, bold);
-        text-transform: uppercase;
-      }
-      .product__price {
-        @include text(#1a1a1e, 0.8rem, 100);
-      }
-    }
-
-    .goToDetailPage {
-      margin-top: 20px;
-      color: #000;
-      border: none;
-      outline: none;
-      background-color: #fff;
-      border: 1px solid #000;
-      transition: linear 0.1s;
-      visibility: hidden;
-      width: 100%;
-      text-transform: uppercase;
-      white-space: nowrap;
-      opacity: 0;
-      &:hover {
-        background-color: #000;
-        color: #fff;
-      }
-    }
-    .quickBuy {
-      @extend .goToDetailPage;
-      background-color: #000;
-      color: #fff;
+  &:hover {
+    border: 1px solid #000;
+    .wrappBtn {
+      visibility: visible;
+      opacity: 1;
     }
   }
+  .product__img{
+    img {
+      width: 100%;
+    }
+  }
+  .product_des {
+    .title-line {
+      @include title-line;
+    }
+    .textBold {
+      @include text(#1a1a1e, 0.8rem, bold);
+      text-transform: uppercase;
+    }
+    .product__price {
+      @include text(#1a1a1e, 0.8rem, 100);
+    }
+  }
+  .wrappBtn {
+    visibility: hidden;
+    opacity: 0;
+    .quickBuy {
+      @include buttonBgBlack;
+      border: 1px solid #000;
+      width: 100%;
+      padding: 8px;
+      height: 32px;
+    }
+    .goToDetailPage {
+      height: 32px;
+      margin-top: 8px !important;
+      @include button;
+      width: 100%;
+      font-size: 10px;
+      padding: 8px;
+    }
+  }
+  .wrapBtnAddToCart {
+    .form-group {
+      margin: 0;
+      label {
+        font-size: 10px;
+        color: #000;
+      }
+      .form-control {
+        height: 32px;
+        font-size: 10px;
+      }
+    }
+    .addToCart {
+      height: 32px;
+      margin-top: 8px;
+      @include buttonBgBlack;
+      border: 1px solid #000;
+      width: 100%;
+      padding: 8px;
+    }
+  }
+}

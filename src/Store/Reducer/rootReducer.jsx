@@ -1,8 +1,14 @@
 import { combineReducers } from "redux";
 
 import TypeDisplayView from './TypeDisplayView'
+import Cart from './Cart'
+import Products from './Products'
+
+
 const rootReducer = combineReducers({
-    TypeDisplayView
+    TypeDisplayView,
+    Cart,
+    Products
   
 });
 

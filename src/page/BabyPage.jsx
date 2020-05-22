@@ -8,7 +8,7 @@ export default class BabyPage extends Component {
             <div className="warpperBodyRigth">
                 <Breadcrumb title={"BABY"} />
                 <TitlePageContainer title={"BABY"} />
-                <ViewDisplayProductContainer />
+                <ViewDisplayProductContainer history={this.props.history}  productType={"baby"} />
             </div>
         )
     }

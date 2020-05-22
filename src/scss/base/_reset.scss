@@ -48,42 +48,7 @@ a {
   
 }
 
-.owl-theme {
-  position: relative;
-  .owl-nav {
-    .owl-prev {
-      position: absolute;
-      left: -3%;
-      top: 45%;
-      outline: none;
-      color: #000;
-      span {
-        font-size: 30px;
-      }
-      &:hover {
-        background-color: #ffffff!important;
-        color: #000000!important;
-      }
-    }
-    .owl-next {
-      position: absolute;
-      right: -3%;
-      top: 45%;
-      outline: none;
-      color: #000;
-      span {
-        font-size: 30px;
-      }
-      &:hover {
-        background-color: #ffffff!important;
-        color: #000000!important;
-      }
-    }
-  }
-  .owl-dots {
-    display: none;
-  }
-}
+
 
 ::-webkit-scrollbar {
   width: 4px;

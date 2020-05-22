@@ -15,7 +15,7 @@ export default class SquadraPage extends Component {
             <div className="warpperBodyRigth">
                 <Breadcrumb title={"SquadraPage"} />
                 <Banner img={img} />
-                <ProductList title={"squadra  corse "} />
+                <ProductList history={this.props.history} title={"squadra  corse "} />
                 <SpecialImage  img={imgSpecial} />
             </div>
         )

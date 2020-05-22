@@ -4,7 +4,7 @@ import "./scss/main.scss";
 import Sidebar from "./component/SideBar/Sidebar";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 import routes from "./routes/routes";
-import TopCart from "./component/TopCart/TopCart";
+import TopCartContainer from "./container/TopCartContainer";
 
 export default class App extends Component {
   showRoutes = (routes) => {
@@ -12,7 +12,7 @@ export default class App extends Component {
     if (routes.length > 0) {
       result = routes.map((route, index) => {
         return (
-          <Route key={index} exact path={route.path} component={route.main} />
+          <Route key={index} exact={route.exact} path={route.path} component={route.main} />
         );
       });
     }
@@ -25,7 +25,7 @@ export default class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Sidebar />
-          <TopCart/>
+          <TopCartContainer   />
           <Switch>
             {this.showRoutes(routes)}
           </Switch>

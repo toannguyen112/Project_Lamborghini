@@ -9,7 +9,7 @@ export default class CollectiblesPage extends Component {
         <div className="warpperBodyRigth">
         <Breadcrumb title={"COLLECTIBLES"} />
         <TitlePageContainer  title={"COLLECTIBLES"}  />
-        <ViewDisplayProductContainer />
+        <ViewDisplayProductContainer  history={this.props.history}  productType={"collecibles"} />
       </div>
     )
   }

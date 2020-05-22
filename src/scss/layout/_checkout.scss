@@ -1,0 +1,138 @@
+.titlePage {
+  @include text(#000, 20px, 600);
+  text-align: center;
+}
+.noItemCart {
+  text-align: center;
+  padding: 100px;
+  h3 {
+    @include text(#000, 20px, 600);
+
+    p {
+      @include text(#000, 10px, 100);
+    }
+  }
+  
+}
+.warpperCheckout {
+  padding-right: 30px;
+  .warpperCheckout--left {
+    table {
+      thead {
+        tr {
+          th {
+            border: none !important;
+            @include text(#000, 12px, 400);
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            @include text(#000, 12px, 400);
+            img {
+              width: 138px;
+            }
+          }
+        }
+      }
+    }
+    .warpperBtn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .btnColor {
+        @include button;
+        font-size: 8px;
+        text-align: center;
+      }
+    }
+  }
+  .warpperCheckout--right {
+    .btnProceed {
+      @include buttonBgBlack;
+    }
+    .Shipping {
+      text-align: center;
+      @include text(#000, 15px, 100);
+      text-transform: uppercase;
+      margin: 10px 0;
+      .card {
+        border: none;
+        padding: 0;
+        .enter {
+          @include text(#000, 10px, 100);
+        }
+        .form-group {
+          text-align: left;
+          @include text(#000, 10px, 100);
+        }
+        .getAquote {
+          @include button;
+          width: 100%;
+          padding: 10px;
+          font-size: 10px;
+        }
+        .ship {
+          @include text(#000, 14px, 700);
+          margin: 10px 0;
+        }
+        .standard {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include text(#000, 10px, 400);
+        }
+        .updateToTal {
+          @extend .getAquote;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .security {
+      @include text(#000, 12px, 100);
+
+      padding: 20px 0;
+    }
+    .disscount {
+      border-top: 1px solid #bebcb7;
+      padding: 20px;
+      @extend .Shipping;
+      .code {
+        padding: 10px 0;
+        @include text(#000, 10px, 100);
+      }
+      .inpCode,
+      .apply {
+        margin: 5px 0;
+        background-color: #fff;
+        width: 100%;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 8px 0;
+        outline: none;
+        border: 1px solid #000;
+      }
+    }
+    .total {
+      .totalTitle {
+        text-align: center;
+        @include text(#000, 15px, 100);
+      }
+      .totalBody {
+        .text {
+          @include text(#000, 14px, 100);
+          padding: 10px 0;
+          white-space: nowrap;
+        }
+      }
+      .grand {
+        white-space: nowrap;
+        @include text(#000, 14px, 100);
+        padding: 10px 0;
+        border-top: 1px solid #bebcb7;
+      }
+    }
+  }
+}

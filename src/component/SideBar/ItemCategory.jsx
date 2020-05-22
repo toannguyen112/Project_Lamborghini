@@ -2,26 +2,32 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class ItemCategory extends Component {
-  renderCategorySmall = (cate) => {
-    return cate.map((item, index) => {
+  renderCategorySmall = () => {
+    let { categoryItem } = this.props;
+    return categoryItem.cate.map((item, index) => {
       return (
-        <li key={index} className="nav-container-backlayer-list-item">
-          <span className="nav-container-backlayer-list-item_link">{item}</span>
-        </li>
+        <Link to={`/${categoryItem.route}/${item.cateRoute}`} key={index}>
+          <li className="nav-container-backlayer-list-item">
+            <span className="nav-container-backlayer-list-item_link">
+              {item.cateName}
+            </span>
+          </li>
+        </Link>
       );
     });
   };
   render() {
     let { categoryItem } = this.props;
+    console.log(categoryItem.cate);
 
     return (
-      <Link className="item--category_link" to={categoryItem.route}>
+      <Link className="item--category_link" to={`/${categoryItem.route}`}>
         <li className="item--category">
-          <span className="item--category_link" > {categoryItem.name} </span>
+          <span className="item--category_link"> {categoryItem.name} </span>
 
           <div className="nav-container-backlayer">
             <ul className="nav-container-backlayer-list">
-              {this.renderCategorySmall(categoryItem.cate)}
+              {this.renderCategorySmall()}
             </ul>
           </div>
         </li>

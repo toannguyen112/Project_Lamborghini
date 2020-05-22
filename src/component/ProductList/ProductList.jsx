@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css'
-import ProductItem from "../ProductItem/ProductItem";
 
 export default class ProductList extends Component {
   render() {
@@ -12,7 +11,7 @@ export default class ProductList extends Component {
         <h3 className="warpperBest__title"> {title} </h3>
         <div className="warpperBest__products">
           <OwlCarousel className="owl-theme" loop items={4} nav  >
-            <ProductItem   />
+            {this.props.children}
           </OwlCarousel>
 
         </div>

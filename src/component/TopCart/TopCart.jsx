@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProductCart from "../ProductCart/ProductCart";
+import { Link } from "react-router-dom";
 
 export default class TopCart extends Component {
   constructor(props) {
@@ -35,6 +35,17 @@ export default class TopCart extends Component {
         ""
       );
   };
+  total = () => {
+    return this.props.cartList.reduce((tsl, product, index) => {
+      return (tsl += product.qty);
+    }, 0);
+  };
+  totalPrice = () => {
+    return this.props.cartList.reduce((tsl, product, index) => {
+      return (tsl += product.qty * product.price);
+    }, 0);
+  };
+
 
   render() {
     return (
@@ -45,7 +56,7 @@ export default class TopCart extends Component {
             onClick={() => this.showSidebarCartWhislist("cart")}
           >
             <i className="fa fa-shopping-cart" />
-            <span className="qty">1</span>
+            <span className="qty"> {this.total()} </span>
           </li>
 
           <li
@@ -53,7 +64,7 @@ export default class TopCart extends Component {
             onClick={() => this.showSidebarCartWhislist("whislist")}
           >
             <i className="fa fa-star" />
-            <span className="qty">1</span>
+            {/* <span className="qty">0</span> */}
           </li>
 
           <li className="item search " onClick={() => this.showSearch()}>
@@ -61,15 +72,16 @@ export default class TopCart extends Component {
               type="text"
               placeholder="Search"
               className="inputSearch"
-              style={{ width: this.state.search ? "165px" : " " }}
+              style={{ width: this.state.search ? "165px" : "0 " }}
             ></input>
             <i className="fa fa-search" />
-           
           </li>
         </ul>
         <div
           className=" box "
-          style={{ transform: this.state.show ? "translateX(0)" : "" }}
+          style={{
+            transform: this.state.show ? "translateX(0)" : "translateX(100%)",
+          }}
         >
           <div
             className="btnclose"
@@ -80,24 +92,21 @@ export default class TopCart extends Component {
 
           {this.state.type === "cart" ? (
             <div className="productDetail">
-              {/* list product cart  */}
-              <ProductCart />
-              <ProductCart />
-              <ProductCart />
-
-              {/* end  */}
+              {this.props.children}
 
               <div className="payment">
                 <div className="sub">
                   <span className="subBold"> Subtotal</span>{" "}
-                  <span className="price">€ 310.00</span>
+                  <span className="price">€ {this.totalPrice()}</span>
                 </div>
                 <div className="price-info">
                   <span className="legal-disclaimer">
                     (Tax incl., shipping cost excl.)
                   </span>
                 </div>
-                <div className="seeAll">SEE ALL</div>
+                <Link to="/checkout" style={{ color: "#000" }}>
+                  <div className="seeAll"  >SEE ALL</div>
+                </Link>
                 <div className="chekcout">CHECKOUT</div>
                 <div className="or">- or -</div>
                 <img
@@ -116,40 +125,40 @@ export default class TopCart extends Component {
         </div>
         {/* searchList */}
 
-        <div className="wrappSearchItem">
-        <ul className="searchList">
-              <li className="searchList--item">
-                <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
-                <div className="name">
-                  Flyknit-technique sock shoe
+        {/* <div className="wrappSearchItem">
+          <ul className="searchList">
+            <li className="searchList--item">
+              <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
+              <div className="name">
+                Flyknit-technique sock shoe
                 </div>
-                <div className="price">
-                  € 132.00
+              <div className="price">
+                € 132.00
                 </div>
-              </li>
-              <li className="searchList--item">
-                <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
-                <div className="name">
-                  Flyknit-technique sock shoe
+            </li>
+            <li className="searchList--item">
+              <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
+              <div className="name">
+                Flyknit-technique sock shoe
                 </div>
-                <div className="price">
-                  € 132.00
+              <div className="price">
+                € 132.00
                 </div>
-              </li>
-              <li className="searchList--item">
-                <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
-                <div className="name">
-                  Flyknit-technique sock shoe
+            </li>
+            <li className="searchList--item">
+              <img className="img-fluid" src="https://static.lamborghinistore.com/media/catalog/product/cache/1/image/550x738/9df78eab33525d08d6e5fb8d27136e95/9/0/9010944llu205_01.jpg" alt="" />
+              <div className="name">
+                Flyknit-technique sock shoe
                 </div>
-                <div className="price">
-                  € 132.00
+              <div className="price">
+                € 132.00
                 </div>
-              </li>
-            </ul>
-            <div className="allResoure">
-              all resoure
+            </li>
+          </ul>
+          <div className="allResoure">
+            all resoure
             </div>
-        </div>
+        </div> */}
 
         {this.showOverPlay()}
       </div>

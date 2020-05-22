@@ -2,7 +2,7 @@
   position: fixed;
   top: 1%;
   right: 0.5%;
-  z-index: 2;
+  z-index: 3  ;
 
   .item {
     background-color: #fff;
@@ -44,11 +44,12 @@
   .search {
     position: relative;
     align-items: center;
+    transition: ease-in-out 0.5s;
     .inputSearch {
       position: absolute;
       top: 0;
       right: 100%;
-      width: 0;
+      
       height: 100%;
       transition: ease-in-out 0.5s;
       outline: none;
@@ -63,7 +64,6 @@
     right: 0;
     bottom: 0;
     background-color: #fff;
-    transform: translateX(100%);
     transition: ease-in-out 0.2s;
     z-index: 1;
     .btnclose {
@@ -157,6 +157,7 @@
       overflow-y: auto;
       .searchList--item {
         text-align: center;
+        cursor: pointer;
         padding: 20px;
         &:hover {
           background-color: #f9f5f0;

@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 export default class Banner extends Component {
     render() {
         let {img} =this.props;
-        console.log(img);
         
         return (
             <div className="wrapperBanner">

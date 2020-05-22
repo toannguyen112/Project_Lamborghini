@@ -4,77 +4,165 @@ import { Link } from "react-router-dom";
 const arrCatefory = [
   {
     name: "MID SEASON SALE",
-    route: "/",
-    cate: ["outerwear", "Sweatshirts & Knitwear", "Polo Shirts"],
+    route: "midseason",
+    cate: [
+      {
+        cateName: "outerwear",
+        cateRoute: "outerwear",
+      },
+      {
+        cateName: "Sweatshirts & Knitwear",
+        cateRoute: "SweatshirtsKnitwear",
+      },
+      {
+        cateName: " Polo Shirts",
+        cateRoute: "PoloShirts",
+      },
+    ],
   },
   {
     name: "travel",
     route: "travel",
+
     cate: [
-      "Backpack & Bags",
-      "Leather Goods",
-      "Small Leather Goods",
-      "Trolley",
+      {
+        cateName: "Backpack & Bags",
+        cateRoute: "BackpackBags",
+      },
+      {
+        cateName: "Leather Goods",
+        cateRoute: "LeatherGoods",
+      },
+      {
+        cateName: "Small Leather Goods",
+        cateRoute: "SmallLeatherGoods",
+      },
+      {
+        cateName: "Trolley",
+        cateRoute: "Trolley",
+      },
     ],
   },
   {
     name: "men collection",
     route: "mencollection",
     cate: [
-      "Backpack & Bags",
-      "Leather Goods",
-      "Small Leather Goods",
-      "Trolley",
+      {
+        cateName: "T shirt",
+        cateRoute: "tshirt",
+      },
+      
     ],
   },
   {
     name: "accessories",
     route: "accessories",
-    cate: ["leathergoods", "leathergoods"],
+    cate: [
+      {
+        cateName: "Ties & Cufflinks",
+        cateRoute: "TiesCufflinks",
+      },
+      {
+        cateName: "Headwear",
+        cateRoute: "Headwear",
+      },
+      {
+        cateName: "Footwear",
+        cateRoute: "Footwear",
+      },
+
+
+      {
+        cateName: "Cosmetics",
+        cateRoute: "Cosmetics",
+      },
+    ]
   },
   {
     name: "baby & junior",
     route: "baby",
-    cate: ["outerwear", "leathergoods"],
+    cate: [
+      // {
+      //   cateName: "Backpack & Bags",
+      //   cateRoute: "BackpackBags",
+      // },
+      // {
+      //   cateName: "Leather Goods",
+      //   cateRoute: "LeatherGoods",
+      // },
+      // {
+      //   cateName: "Small Leather Goods",
+      //   cateRoute: "SmallLeatherGoods",
+      // },
+    ]
   },
   {
     name: "Collectibles",
 
     route: "collectibles",
-    cate: ["outerwear", "leathergoods"],
+    cate: [
+      {
+        cateName: "Luxury",
+        cateRoute: "Luxury",
+      },
+      {
+        cateName: "Cases & Hi-Tech",
+        cateRoute: "Cases-Hi-Tech",
+      },
+     
+    ]
   },
   {
     name: "Squadra Corse",
 
     route: "squadra",
-    cate: ["outerwear", "leathergoods"],
+    cate: [
+      {
+        cateName: "Men",
+        cateRoute: "men",
+      },
+      {
+        cateName: "women",
+        cateRoute: "women",
+      },
+      {
+        cateName: "kid",
+        cateRoute: "kid",
+      },
+    ]
   },
-  {
-    name: "Shop By Car",
 
-    route: "shopbycar",
-    cate: ["Terzo Millennio", "Urus", "Huracán", "Aventador"],
-  },
   {
     name: "Special Edition",
     route: "special",
-    cate: ["outerwear", "leathergoods"],
+    cate: [
+      {
+        cateName: "Backpack & Bags",
+        cateRoute: "BackpackBags",
+      },
+      {
+        cateName: "Leather Goods",
+        cateRoute: "LeatherGoods",
+      },
+      {
+        cateName: "Small Leather Goods",
+        cateRoute: "SmallLeatherGoods",
+      },
+    ]
   },
 ];
 class Sidebar extends Component {
   showCate() {
-    let result = [];
-    for (let i = 0; i < 9; i++) {
-      result.push(<ItemCategory key={i} categoryItem={arrCatefory[i]} />);
-    }
-    return result;
+    return arrCatefory.map((item, index) => {
+      return <ItemCategory key={index} categoryItem={item} />;
+    });
   }
 
   render() {
     return (
       <div className="warpperSidebar">
         <div className="logo">
-          <Link to="/" style={{ textDecoration: "none" }} >
+          <Link to="/" style={{ textDecoration: "none" }}>
             <img
               className="logo__img"
               src="https://www.lamborghinistore.com/skin/frontend/lamborghini/responsive/img/logo.png"
@@ -89,7 +177,7 @@ class Sidebar extends Component {
             <span>Newsletter</span>
           </li>
           <Link to="/login">
-            <li className="listSocial--item" >
+            <li className="listSocial--item">
               <span>my account</span>
             </li>
           </Link>

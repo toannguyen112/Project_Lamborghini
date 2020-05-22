@@ -18,9 +18,12 @@ const img = [
 
 export default class SpecialPgae extends Component {
   render() {
-    return <div className="warpperBodyRigth">{this.showItem()}
-    <Footer/>
-    </div>;
+    return (
+      <div className="warpperBodyRigth">
+        {this.showItem()}
+        <Footer />
+      </div>
+    );
   }
   showItem = () => {
     return img.map((item, index) => {
