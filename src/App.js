@@ -28,7 +28,8 @@ export default class App extends Component {
           <TopCartContainer   />
           <Switch>
             {this.showRoutes(routes)}
-          </Switch>
+          </Switch> 
+         
         </BrowserRouter>
       </div>
     );

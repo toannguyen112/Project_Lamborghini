@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Banner from "../component/Banner/Banner";
 import Carousel from "../component/Carousel/Carousel";
 import Special from "../component/Special/Special";
@@ -15,13 +15,13 @@ export class HomePage extends Component {
   render() {
     return (
       <div className="warpperBodyRigth">
-        <Carousel />
-        <Banner img={img} />
-        <BestSellerContainer  history={this.props.history}  productType={"bestSeller"} title="Best seller" />
-        <Special />
-        <BannerBottom />
-        <Footer />
-      </div>
+      <Carousel />
+      <Banner img={img} />
+      <BestSellerContainer  history={this.props.history}  productType={"bestSeller"} title="Best seller" />
+      <Special />
+      <BannerBottom />
+      <Footer />
+    </div>
     );
   }
 }

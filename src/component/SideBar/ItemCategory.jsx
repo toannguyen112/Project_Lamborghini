@@ -18,7 +18,7 @@ export default class ItemCategory extends Component {
   };
   render() {
     let { categoryItem } = this.props;
-    console.log(categoryItem.cate);
+   
 
     return (
       <Link className="item--category_link" to={`/${categoryItem.route}`}>

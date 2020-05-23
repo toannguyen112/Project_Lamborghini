@@ -10,7 +10,21 @@ export default class Carousel extends Component {
           data-ride="carousel"
         >
           <div className="carousel-inner">
-            <div className="carousel-item active">
+
+          <div className="carousel-item active">
+              <img
+                src="https://static.lamborghinistore.com/media/widgets/resized/1700x/3138-Desk.jpg"
+                alt="..."
+              />
+              <div className=" caption ">
+                <h3 className="namepr">Huracán</h3>
+                <p className="bgWhite">1:43 scale perfection</p>
+                <div className="cta-container">
+                  <button className="discoverNow">discovery now</button>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item ">
               <img
                 src="https://static.lamborghinistore.com/media/widgets/resized/1700x/LMB-2591-desk.jpg"
                 alt="..."

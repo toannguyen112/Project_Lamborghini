@@ -1,20 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Footer from "../component/Footer/Footer";
 import BestSellerContainer from "../container/BestSellerContainer";
 import { Link } from "react-router-dom";
 
 export default class CheckoutPage extends Component {
   totalPrice = () => {
-    let { cartList } = this.props;
-
     return this.props.cartList.reduce((tsl, product, index) => {
       return (tsl += product.qty * product.price);
     }, 0);
   };
+
+  onClearCart = () => {
+    this.props.onClearCart();
+  };
   render() {
     let { cartList } = this.props;
     return (
-      <div className="warpperBodyRigth">
+      <Fragment>
+        <div className="warpperBodyRigth">
         {cartList.length > 0 ? (
           <div className="container-fluid">
             <h3 className="titlePage">Shopping Cart</h3>
@@ -45,7 +48,10 @@ export default class CheckoutPage extends Component {
                         <button className=" btnColor update mr-2 ">
                           Update Shopping Cart
                         </button>
-                        <button className=" btnColor clear">
+                        <button
+                          className=" btnColor clear"
+                          onClick={() => this.onClearCart()}
+                        >
                           Clear Shopping Cart
                         </button>
                       </div>
@@ -196,7 +202,7 @@ export default class CheckoutPage extends Component {
                               />
                             </div>
                           </div>
-                        </div>  
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -212,8 +218,8 @@ export default class CheckoutPage extends Component {
           </div>
         )}
 
-        <Footer />
       </div>
+      </Fragment>
     );
   }
 }

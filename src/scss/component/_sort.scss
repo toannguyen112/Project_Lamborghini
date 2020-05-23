@@ -10,38 +10,51 @@
     margin: 0 10px;
     cursor: pointer;
     animation: filter linear 0.5s;
+    max-height: 30px;
   }
-  .orderBy {
-    @extend .filterBy;
-    animation: sortBy linear 0.5s;
+
+  .warpOrder {
+    .orderBy {
+      @extend .filterBy;
+
+      animation: sortBy linear 0.5s;
+    }
   }
-  .filterChoosen{
+
+  .collapse {
+    font-size: 10px;
+
+    li {
+      padding: 0 20px;
+    }
+  }
+  .filterChoosen {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0 ;
+    right: 0;
     left: 0;
     text-align: left;
     padding: 200px 0 0 0;
     margin-left: 240px;
     background-color: #fff;
-    z-index: 2;
+    z-index: 4;
     transform: translateY(-100%);
     transition: ease-in-out 0.5s;
-    .close{
+    .close {
       position: absolute;
       top: 10px;
       right: 10px;
       font-size: 13px;
       cursor: pointer;
     }
-    .titleFilter{
-      @include text(#000,10px ,100 );
+    .titleFilter {
+      @include text(#000, 10px, 100);
       margin-bottom: 30px;
     }
-    .filterChoosen__list{
-      .listCateforyFilter__item{
-        @include text(#000,10px ,100 );
+    .filterChoosen__list {
+      .listCateforyFilter__item {
+        @include text(#000, 10px, 100);
         text-transform: uppercase;
         letter-spacing: 2px;
         line-height: 1.5rem;
@@ -49,11 +62,9 @@
         &:hover {
           text-decoration: underline;
         }
-
       }
-      .cateMain{
-      @include text(#000,10px ,bold )
-
+      .cateMain {
+        @include text(#000, 10px, bold);
       }
     }
   }
@@ -65,7 +76,6 @@
   }
   to {
     margin: 0 10px;
-
   }
 }
 @keyframes sortBy {
@@ -74,7 +84,5 @@
   }
   to {
     margin: 0 10px;
-
   }
 }
-

@@ -25,6 +25,12 @@ const Cart = (state = initialState, action) => {
       return [...state];
     }
 
+    case type.CLEAR_CART: {
+      state = [];
+      localStorage.setItem("cart", JSON.stringify(state))
+      return [...state]
+    }
+
     default:
       return state;
   }

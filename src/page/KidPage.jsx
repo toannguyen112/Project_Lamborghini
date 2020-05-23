@@ -7,11 +7,11 @@ export default class KidPage extends Component {
   render() {
     return (
       <div className="warpperBodyRigth">
-        <Breadcrumb title={"TiesCufflinks"} />
-        <TitlePageContainer title={"TiesCufflinks"} />
+        <Breadcrumb title={"KIDS"} />
+        <TitlePageContainer title={"KIDS"} />
         <ViewDisplayProductContainer
           history={this.props.history}
-          productType={"TiesCufflinks"}
+          productType={"kid"}
         />
         <Footer />
       </div>

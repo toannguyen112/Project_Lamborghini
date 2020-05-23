@@ -6,12 +6,17 @@ export default class Sort extends Component {
 
     this.state = {
       showFilter: false,
+      showOrderBy: false,
     };
   }
 
+  openOrderBy = () => {
+    this.setState({
+      showOrderBy: !this.state.showOrderBy,
+    });
+  };
+
   onShowFilter = () => {
-    console.log("work");
-    
     this.setState({
       showFilter: !this.state.showFilter,
     });
@@ -23,8 +28,11 @@ export default class Sort extends Component {
         <div className="filterBy" onClick={() => this.onShowFilter()}>
           filter by
         </div>
-        <div className="orderBy"> order by <i className=" fa fa-angle-down" />
- </div>
+        <div className="warpOrder ">
+          <div className="orderBy" onClick={() => this.openOrderBy()}>
+            order by <i className=" fa fa-angle-down" />
+          </div>
+        </div>
 
         <div
           className="filterChoosen"
@@ -32,7 +40,7 @@ export default class Sort extends Component {
             transform: this.state.showFilter ? " translateY(0%)" : "",
           }}
         >
-          <div className="close" onClick={()=>this.onShowFilter()} >
+          <div className="close" onClick={() => this.onShowFilter()}>
             <i className="fa fa-times" />
           </div>
           <div className="container">

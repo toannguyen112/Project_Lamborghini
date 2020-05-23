@@ -30,6 +30,7 @@ import MenPage from "../page/MenPage";
 import TshirtPage from "../page/TshirtPage";
 import  CheckoutContainer  from "../container/CheckoutContainer";
 import AccountPage from "../page/AccountPage";
+import SearchResultPage from "../page/SearchResultPage";
 
 
 const routes = [
@@ -240,6 +241,13 @@ const routes = [
     exact: true,
     main: ({ history, match }) => (
       <AccountPage history={history} match={match} />
+    ),
+  },
+  {
+    path: "/result",
+    exact: true,
+    main: ({ history, match }) => (
+      <SearchResultPage history={history} match={match} />
     ),
   },
 ];

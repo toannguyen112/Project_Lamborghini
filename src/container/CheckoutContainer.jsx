@@ -9,7 +9,7 @@ export class CheckoutContainer extends Component {
     console.log(cartList);
 
     return (
-      <CheckoutPage cartList={cartList}>
+      <CheckoutPage cartList={cartList}  onClearCart={this.props.onClearCart} >
         {this.showCartItem(cartList)}
       </CheckoutPage>
     );
@@ -32,6 +32,9 @@ const mapDispatchToProps = (dispatch) => {
     ondDeleteCartItem: (id) => {
       dispatch(action.deleteCart(id));
     },
+    onClearCart: () => {
+      dispatch(action.clearCart())
+    }
   };
 };
 

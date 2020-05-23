@@ -40,7 +40,7 @@
       margin-bottom: 50%;
 
       .name {
-          margin: 0 10px;
+        margin: 0 10px;
         @include text(#000, 10px, 700);
         letter-spacing: 2px;
       }
@@ -60,7 +60,7 @@
       .form-group {
         text-align: left;
         label {
-         text-transform: uppercase;
+          text-transform: uppercase;
           @include text(#000, 12px, 400);
         }
         .custom-select {
@@ -96,6 +96,7 @@
       .warp_addWish {
         text-align: center;
         .addWish {
+          cursor: pointer;
           display: inline-block;
           padding: 10px 5px;
           text-transform: uppercase;

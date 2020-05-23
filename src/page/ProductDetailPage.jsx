@@ -27,6 +27,10 @@ class ProductDetailPage extends Component {
     });
   }
 
+  addToWish = (product) => {
+    this.props.addToWish(product);
+  };
+
   render() {
     let { product } = this.state;
     console.log(product.image);
@@ -173,7 +177,12 @@ class ProductDetailPage extends Component {
                       Add to cart
                     </button>
                     <div className="warp_addWish">
-                      <p className="addWish">Add to wishlist</p>
+                      <p
+                        className="addWish"
+                        onClick={() => this.addToWish(product)}
+                      >
+                        Add to wishlist
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -199,6 +208,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (product) => {
       dispatch(action.addToCart(product));
+    },
+    addToWish: (product) => {
+      dispatch(action.addTowish(product));
     },
   };
 };

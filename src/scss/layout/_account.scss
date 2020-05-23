@@ -1,34 +1,135 @@
 .wrappAccount {
-  padding: 20px 60px;
+  padding: 20px 5px;
   .title {
     text-align: center;
     @include text(#000, 20px, 400);
-    border-bottom: 1px solid #660066;
   }
-  .wrappColapse {
-    .text {
-      cursor: pointer;
+  .Shipping {
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
+    padding: 10px 0;
+    @include text(#000, 15px, 100);
+    text-transform: uppercase;
+    margin: 10px 0;
+    .myAccount {
       display: flex;
       justify-content: space-between;
-      @include text(#000, 12px, 400);
+      padding: 0 40px;
     }
-    .collapse  {
-        border: none;
-      .card {
-        border: none;
-        padding: 0;
-        .list {
-          li {
-            padding: 20px 0;
-            &:hover {
-              background-color: #afafaf;
-            }
-          }
-          li:nth-child(1) {
+    .card {
+      border: none;
+      padding: 0;
+      .listIcon {
+        .itemIcon {
+          display: flex;
+          align-items: center;
+          padding: 40px;
+          font-size: 15px;
+          font-weight: 600;
+          transition: ease 0.3s;
+          &:hover {
             background-color: #afafaf;
           }
         }
+        .itemIcon:first-child {
+          background-color: #afafaf;
+        }
       }
+    }
+  }
+  .noti {
+    p {
+      text-align: center;
+    }
+    button {
+      @include button;
+      width: 20%;
+      padding: 8px 0;
+    }
+  }
+  .wrappAccount__body {
+    padding: 20px 0;
+    .list {
+      .item {
+        text-align: center;
+        padding: 60px 0;
+        color: #000;
+        font-size: 15px;
+        margin: 10px 0;
+        cursor: pointer;
+        border: 1px solid #e6e6e6;
+        transition: ease-in-out 0.5s;
+        &:hover {
+          color: #afafaf;
+          background: #fff;
+        }
+        i {
+          font-size: 28px;
+        }
+      }
+      .item.active {
+        background-color: #e6e6e6;
+        &:hover {
+          color: #000;
+          background-color: #afafaf;
+        }
+      }
+    }
+  }
+  h3 {
+    text-align: center;
+    @include text(#000, 15px, 100);
+  }
+  .warpperEdit {
+    form {
+      border: 1px solid #afafaf;
+      padding: 20px;
+      font-size: 10px;
+      .warppbtn {
+        button {
+          width: 100%;
+          @include button;
+        }
+        .save {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+  table {
+    font-size: 12px;
+    tbody {
+      tr {
+        td {
+          .addtocart {
+            @include buttonBgBlack;
+          }
+        }
+      }
+    }
+  }
+  .warppbtn {
+    display: flex;
+    justify-content: space-between;
+
+    .btnMutil {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+     
+
+    }
+    .back{
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+      width: 20%;
     }
   }
 }
