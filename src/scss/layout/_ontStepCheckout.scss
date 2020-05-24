@@ -1,0 +1,103 @@
+.wrapperOneStep__title {
+  text-align: center;
+  @include text(#000, 15px, 600);
+  letter-spacing: 2px;
+  padding: 20px;
+}
+.alerady {
+  text-align: center;
+  @include text(#000, 10px, 100);
+}
+
+.btnface {
+  @include btnFace;
+}
+
+.payment {
+  .wrapper___BILLING,
+  .warpper__shippingMethod,
+  .warpper__COUPON,
+  .warpper__review {
+    border: 1px solid #e6e6e6;
+    padding: 20px;
+    .title {
+      @include text(#000, 15px, 100);
+    }
+  }
+  .wrapper___BILLING {
+    .form-group {
+      @include text(#000, 12px, 100);
+    }
+    .form-check {
+      @include text(#000, 12px, 100);
+      margin: 20px 0;
+    }
+  }
+  .warpper__shippingMethod {
+    @extend .wrapper___BILLING;
+  }
+  .warpper__COUPON {
+    @extend .wrapper___BILLING;
+    .apply {
+      @include buttonBgBlack;
+    }
+  }
+  .warpper__review {
+    @include text(#000, 12px, 100);
+
+    .onestepcheckout {
+      @include text(#000, 15px, 100);
+      width: 100%;
+      border-bottom: 1px solid #e6e6e6;
+      thead {
+        tr {
+          .product-info {
+            width: 40%;
+          }
+          .qty {
+            text-align: center;
+            width: 20%;
+            padding: 10px 0;
+          }
+          .total {
+            text-align: right;
+            width: 20%;
+            padding: 10px 0;
+          }
+        }
+      }
+      tbody {
+        .qty {
+          text-align: center;
+          width: 20%;
+          padding: 10px 0;
+          margin: 10px 0;
+        }
+        .total {
+          text-align: right;
+          width: 20%;
+          padding: 10px 0;
+          margin: 10px 0;
+        }
+      }
+    }
+    .totals-bg {
+      width: 100%;
+      border-bottom: 1px solid #e6e6e6;
+      tbody {
+        tr {
+          .price {
+            text-align: right;
+          }
+        }
+      }
+      .text-bold {
+        font-weight: 700;
+      }
+    }
+    .placeOrder {
+      margin: 20px 0;
+      @include buttonBgBlack;
+    }
+  }
+}

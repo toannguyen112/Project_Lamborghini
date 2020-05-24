@@ -23,9 +23,9 @@ export default class TopCart extends Component {
 
   showSearch = () => {
     this.setState({
-        search: !this.state.search,
-      });
-      
+      search: !this.state.search,
+    });
+
   };
 
   showSidebarCartWhislist = (value) => {
@@ -145,7 +145,7 @@ export default class TopCart extends Component {
             <div className="productDetail">
               {this.props.children}
 
-              {this.props.cartList.length > 0    ? (
+              {this.props.cartList.length > 0 ? (
                 <div className="payment">
                   <div className="sub">
                     <span className="subBold"> Subtotal</span>{" "}
@@ -159,7 +159,9 @@ export default class TopCart extends Component {
                   <Link to="/checkout" style={{ color: "#000" }}>
                     <div className="seeAll">SEE ALL</div>
                   </Link>
-                  <div className="chekcout">CHECKOUT</div>
+                  <Link to="/onestepcheckout" >
+                    <div className="chekcout">CHECKOUT</div>
+                  </Link>
                   <div className="or">- or -</div>
                   <img
                     className="pay"
@@ -188,7 +190,7 @@ export default class TopCart extends Component {
         </div>
         <div
           className="wrappSearchItem"
-          style={{ display: keyWord && this.state.search  ? "block" : "none" }}
+          style={{ display: keyWord && this.state.search ? "block" : "none" }}
         >
           <ul className="searchList">
             {this.showSearchItem(productList, keyWord)}

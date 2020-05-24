@@ -31,6 +31,7 @@ import TshirtPage from "../page/TshirtPage";
 import  CheckoutContainer  from "../container/CheckoutContainer";
 import AccountPage from "../page/AccountPage";
 import SearchResultPage from "../page/SearchResultPage";
+import OneStepCheckoutPage from "../page/OneStepCheckoutPage";
 
 
 const routes = [
@@ -248,6 +249,13 @@ const routes = [
     exact: true,
     main: ({ history, match }) => (
       <SearchResultPage history={history} match={match} />
+    ),
+  },
+  {
+    path: "/onestepcheckout",
+    exact: true,
+    main: ({ history, match }) => (
+      <OneStepCheckoutPage history={history} match={match} />
     ),
   },
 ];
