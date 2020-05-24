@@ -78,7 +78,7 @@ export default class ProductItem extends Component {
           <div className="title-line"></div>
           <p className=" textBold  prduct__name"> {product.name} </p>
           <p className="product__price"> {product.price} </p>
-          <p className=" textBold  soldOut">sold out</p>
+          {/* <p className=" textBold  soldOut">sold out</p> */}
           {this.showAddToCart(product)}
         </div>
       </div>

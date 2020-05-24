@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class Carousel extends Component {
   render() {
+    let {imgCarousel} = this.props
     return (
       <div className="wrappperCarousel">
         <div
@@ -10,59 +11,22 @@ export default class Carousel extends Component {
           data-ride="carousel"
         >
           <div className="carousel-inner">
-
-          <div className="carousel-item active">
-              <img
-                src="https://static.lamborghinistore.com/media/widgets/resized/1700x/3138-Desk.jpg"
-                alt="..."
-              />
-              <div className=" caption ">
-                <h3 className="namepr">Huracán</h3>
-                <p className="bgWhite">1:43 scale perfection</p>
-                <div className="cta-container">
-                  <button className="discoverNow">discovery now</button>
+            {imgCarousel.map((image, index) => {
+              return (
+                <div
+                  className={`carousel-item ${index === 0 ? "active" : ""} `}
+                >
+                  <img src={image} alt="..." />
+                  <div className=" caption ">
+                    <h3 className="namepr">Huracán</h3>
+                    <p className="bgWhite">1:43 scale perfection</p>
+                    <div className="cta-container">
+                      <button className="discoverNow">discovery now</button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="carousel-item ">
-              <img
-                src="https://static.lamborghinistore.com/media/widgets/resized/1700x/LMB-2591-desk.jpg"
-                alt="..."
-              />
-              <div className=" caption ">
-                <h3 className="namepr">Huracán</h3>
-                <p className="bgWhite">1:43 scale perfection</p>
-                <div className="cta-container">
-                  <button className="discoverNow">discovery now</button>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item ">
-              <img
-                src="https://static.lamborghinistore.com/media/widgets/resized/1700x/slider-desktop.jpg"
-                alt="..."
-              />
-              <div className=" caption ">
-                <h3 className="namepr">Huracán</h3>
-                <p className="bgWhite">1:43 scale perfection</p>
-                <div className="cta-container">
-                  <button className="discoverNow">discovery now</button>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item ">
-              <img
-                src="https://static.lamborghinistore.com/media/widgets/resized/1700x/LMB-2929-2.jpg"
-                alt="..."
-              />
-              <div className=" caption ">
-                <h3 className="namepr">Huracán</h3>
-                <p className="bgWhite">1:43 scale perfection</p>
-                <div className="cta-container">
-                  <button className="discoverNow">discovery now</button>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
           <a
             className="carousel-control-prev"
@@ -71,7 +35,7 @@ export default class Carousel extends Component {
             data-slide="prev"
           >
             <i
-              style={{ fontSize: "30px", color: "#CC0"  ,marginRight : "100px"}}
+              style={{ fontSize: "30px", color: "#CC0", marginRight: "100px" }}
               className="fa fa-chevron-left"
             />
 
@@ -84,7 +48,7 @@ export default class Carousel extends Component {
             data-slide="next"
           >
             <i
-              style={{ fontSize: "30px", color: "#CC0"  ,marginLeft : "100px"}}
+              style={{ fontSize: "30px", color: "#CC0", marginLeft: "100px" }}
               className="fa fa-chevron-right"
             />
 

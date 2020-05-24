@@ -51,3 +51,11 @@ export const clearCart = () => {
     type: types.CLEAR_CART,
   };
 };
+
+export const sort = (type) => {
+  return {
+    type: types.SORT,
+    payload: type
+  };
+};
+

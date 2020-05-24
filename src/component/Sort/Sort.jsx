@@ -1,13 +1,20 @@
 import React, { Component } from "react";
-
-export default class Sort extends Component {
+import { connect } from 'react-redux'
+import * as action from "../../Store/Action/action"
+class Sort extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       showFilter: false,
       showOrderBy: false,
+      sort: ""
+
     };
+  }
+  sort = (value) => {
+    this.props.sort(value)
+
   }
 
   openOrderBy = () => {
@@ -30,7 +37,18 @@ export default class Sort extends Component {
         </div>
         <div className="warpOrder ">
           <div className="orderBy" onClick={() => this.openOrderBy()}>
-            order by <i className=" fa fa-angle-down" />
+            order by 
+            {this.state.showOrderBy ?  <i class=" ml-2 fa fa-angle-up"></i> : <i className=" ml-2  fa fa-angle-down" />}
+           
+           
+          </div>
+          <div className="orderBy__body__content" style={{ display: this.state.showOrderBy ? "block" : "none" }}   >
+            <ul className="listSort">
+              <li className="listSort--item" onClick={() => this.sort("name-ascending")} >Name (ascending)</li>
+              <li className="listSort--item" onClick={() => this.sort("name-descending")} >Name (descending)</li>
+              <li className="listSort--item" onClick={() => this.sort("price-ascending")} >Price (ascending)</li>
+              <li className="listSort--item" onClick={() => this.sort("price-descending")} >Price (descending)</li>
+            </ul>
           </div>
         </div>
 
@@ -122,3 +140,19 @@ export default class Sort extends Component {
     );
   }
 }
+
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    sort: (type) => {
+      dispatch(action.sort(type));
+    },
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Sort);
+
