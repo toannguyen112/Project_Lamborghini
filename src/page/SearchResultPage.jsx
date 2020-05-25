@@ -6,7 +6,7 @@ export default class SearchResultPage extends Component {
   render() {
     return (
       <div className="warpperBodyRigth">
-        <SearchResultContainer />
+        <SearchResultContainer history={this.props.history}/>
       </div>
     );
   }

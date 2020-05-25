@@ -6,6 +6,8 @@ import Products from './Products'
 import Wish from './Wish'
 import keyword from './KeyWord'
 import Sort from './SortType'
+import addToCartSuccess from './addToCartSuccess'
+
 
 
 
@@ -17,7 +19,8 @@ const rootReducer = combineReducers({
     Products,
     Wish,
     keyword,
-    Sort
+    Sort,
+    addToCartSuccess
   
 });
 

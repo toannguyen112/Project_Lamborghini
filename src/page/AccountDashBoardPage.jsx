@@ -7,16 +7,12 @@ import MyOrder from "../component/MyOrder/MyOrder";
 import Billing from "../component/Billing/Billing";
 import MyWishlist from "../component/MyWishlist/MyWishlist";
 
-export default class AccountPage extends Component {
+export default class AccountDashBoardPage extends Component {
   render() {
     return (
       <div className="warpperBodyRigth">
-        {/* <MyDashboard /> */}
-        {/* <AccountInfomation/> */}
-        {/* <AddNewAdreess/> */}
-        {/* <MyOrder/> */}
-        {/* <Billing/> */}
-        <MyWishlist/>
+        <MyDashboard />
+
         <Footer />
       </div>
     );

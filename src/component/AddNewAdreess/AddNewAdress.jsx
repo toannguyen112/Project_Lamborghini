@@ -3,7 +3,8 @@ import React, { Component } from "react";
 export default class AddNewAdreess extends Component {
   render() {
     return (
-      <div className="wrappAccount">
+      <div className="warpperBodyRigth">
+   <div className="wrappAccount">
         <h2 className="title">ADD NEW ADDRESS</h2>
         <div className="Shipping">
           <div
@@ -212,6 +213,8 @@ export default class AddNewAdreess extends Component {
           </div>
         </div>
       </div>
+      </div>
+   
     );
   }
 }

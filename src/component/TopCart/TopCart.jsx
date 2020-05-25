@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TopWishItem from "../TopWishItem/TopWishItem";
 import SearchItem from "../SearchItem/SearchItem";
+import AlertSuccess from "../Alert/AlertSuccess";
 
 export default class TopCart extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ export default class TopCart extends Component {
     this.setState({
       search: !this.state.search,
     });
-
   };
 
   showSidebarCartWhislist = (value) => {
@@ -33,6 +33,12 @@ export default class TopCart extends Component {
       show: !this.state.show,
       type: value,
     });
+  };
+
+  showAlert = () => {
+    if (this.props.success) {
+      return <AlertSuccess    />;
+    }
   };
 
   showSearchItem = (productList, keyWord) => {
@@ -58,8 +64,8 @@ export default class TopCart extends Component {
         onClick={() => this.showSidebarCartWhislist()}
       ></div>
     ) : (
-        ""
-      );
+      ""
+    );
   };
   totalQty = () => {
     return this.props.cartList.reduce((tsl, product, index) => {
@@ -90,7 +96,7 @@ export default class TopCart extends Component {
   };
 
   render() {
-    let { productList } = this.props;
+    let { productList, success } = this.props;
     let { keyWord } = this.state;
 
     return (
@@ -113,7 +119,10 @@ export default class TopCart extends Component {
           </li>
 
           <li className="item search ">
-            <div className="warpIconSearh" onClick={() => this.showSearch()} > <i className="fa fa-search" /></div>
+            <div className="warpIconSearh" onClick={() => this.showSearch()}>
+              {" "}
+              <i className="fa fa-search" />
+            </div>
             <div
               className={`wapSearch   ${this.state.search ? "active" : ""}  `}
             >
@@ -159,7 +168,7 @@ export default class TopCart extends Component {
                   <Link to="/checkout" style={{ color: "#000" }}>
                     <div className="seeAll">SEE ALL</div>
                   </Link>
-                  <Link to="/onestepcheckout" >
+                  <Link to="/onestepcheckout">
                     <div className="chekcout">CHECKOUT</div>
                   </Link>
                   <div className="or">- or -</div>
@@ -170,23 +179,23 @@ export default class TopCart extends Component {
                   />
                 </div>
               ) : (
-                  ""
-                )}
+                ""
+              )}
             </div>
           ) : (
-              <div className="warpperWishList">
-                <ul className="wishList">{this.showWishItem()}</ul>
-                {this.props.wishList.length > 0 ? (
-                  <div className="wappBtn">
-                    <button className="goToWhiList">go to wishlist</button>
-                  </div>
-                ) : (
-                    <p className="alert">
-                      YOU HAVE NO ITEMS IN YOUR SHOPPING WHISLIST.
-                    </p>
-                  )}
-              </div>
-            )}
+            <div className="warpperWishList">
+              <ul className="wishList">{this.showWishItem()}</ul>
+              {this.props.wishList.length > 0 ? (
+                <div className="wappBtn">
+                  <button className="goToWhiList">go to wishlist</button>
+                </div>
+              ) : (
+                <p className="alert">
+                  YOU HAVE NO ITEMS IN YOUR SHOPPING WHISLIST.
+                </p>
+              )}
+            </div>
+          )}
         </div>
         <div
           className="wrappSearchItem"
@@ -195,14 +204,14 @@ export default class TopCart extends Component {
           <ul className="searchList">
             {this.showSearchItem(productList, keyWord)}
           </ul>
-          <Link to="/result" >
+          <Link to="/result">
             <div className="allResoure">
-              <button>
-                all resoure
-            </button>
-            </div></Link>
+              <button>all resoure</button>
+            </div>
+          </Link>
         </div>
 
+        {this.showAlert()}
         {this.showOverPlay()}
       </div>
     );

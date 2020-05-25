@@ -2,17 +2,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export default class ProductCart extends Component {
-
-
-
   onDeleteCart = (id) => {
-    console.log(id);
-    this.props.onDeleteCartItem(id)
-
-    
-  }
+    this.props.onDeleteCartItem(id);
+  };
   render() {
-    let { image, price, name, id ,qty } = this.props.product;
+    let { image, price, name, id, qty } = this.props.product;
     return (
       <div className="productCart">
         <Link to={`/product/${id}`}>
@@ -21,10 +15,13 @@ export default class ProductCart extends Component {
         <div className="product__des">
           <h3 className="product__name">{name}</h3>
 
-          <p className="productSize">SIZE 40 QTY {qty}  </p>
+          <p className="productSize">SIZE 40 QTY {qty} </p>
           <p className="product__price">
             {price}
-            <span className="close_product" onClick={()=>this.onDeleteCart(id)}  >
+            <span
+              className="close_product"
+              onClick={() => this.onDeleteCart(id)}
+            >
               <i className="fa fa-times" />
             </span>
           </p>

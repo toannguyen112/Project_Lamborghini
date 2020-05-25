@@ -71,8 +71,9 @@ export class ViewDisplayProductContainer extends Component {
             <div className="col-md-3 col-sm-12" key={i}>
               <ProductItem
                 addToCart={this.props.addToCart}
+                alerAddToCartSuccess={this.props.alerAddToCartSuccess}
                 history={history}
-                product={productsList[i]}
+                product={productsList[i]} 
               />
             </div>
           );
@@ -81,6 +82,7 @@ export class ViewDisplayProductContainer extends Component {
             <div className="col-md-6 col-sm-12" key={i}>
               <ProductItem
                 addToCart={this.props.addToCart}
+                alerAddToCartSuccess={this.props.alerAddToCartSuccess}
                 history={history}
                 product={productsList[i]}
               />
@@ -106,6 +108,9 @@ const mapDispatchToProps = (dispatch) => {
     addToCart: (cart) => {
       dispatch(action.addToCart(cart));
     },
+    alerAddToCartSuccess : ()=>{
+      dispatch(action.alerAddToCartSuccess())
+    }
   };
 };
 

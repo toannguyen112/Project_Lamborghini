@@ -15,7 +15,7 @@ export class SearchResultContainer extends Component {
       result = productList.map((product, index) => {
         return (
           <div className="col-3" key={index}>
-            <ProductItem product={product} />
+            <ProductItem history={this.props.history} product={product} />
           </div>
         );
       });

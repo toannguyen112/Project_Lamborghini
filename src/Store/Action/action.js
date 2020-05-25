@@ -55,7 +55,12 @@ export const clearCart = () => {
 export const sort = (type) => {
   return {
     type: types.SORT,
-    payload: type
+    payload: type,
   };
 };
 
+export const alerAddToCartSuccess = (value) => {
+  return {
+    type: types.ADD_TO_CART_SUCCESS,
+  };
+};

@@ -54,6 +54,7 @@ export default class ProductItem extends Component {
    
 
     this.props.addToCart(cart);
+    this.props.alerAddToCartSuccess();
     this.setState({
       quickBuy : !this.state.quickBuy
     })

@@ -7,6 +7,8 @@
  export const DELETE_WISH = 'DELETE_WISH'
  export const KEY_WORD = 'KEY_WORD'
  export const SORT = 'SORT'
+ export const ADD_TO_CART_SUCCESS = 'ADD_TO_CART_SUCCESS'
+
 
 
 

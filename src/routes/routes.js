@@ -29,9 +29,14 @@ import WomenPage from "../page/WomentPage";
 import MenPage from "../page/MenPage";
 import TshirtPage from "../page/TshirtPage";
 import  CheckoutContainer  from "../container/CheckoutContainer";
-import AccountPage from "../page/AccountPage";
+import AccountPage from "../page/AccountDashBoardPage";
 import SearchResultPage from "../page/SearchResultPage";
 import OneStepCheckoutPage from "../page/OneStepCheckoutPage";
+import AddNewAdreess from "../component/AddNewAdreess/AddNewAdress";
+import AccountDashBoardPage from "../page/AccountDashBoardPage";
+import MyOrder from "../component/MyOrder/MyOrder";
+import Billing from "../component/Billing/Billing";
+import MyWishlist from "../component/MyWishlist/MyWishlist";
 
 
 const routes = [
@@ -238,10 +243,38 @@ const routes = [
     ),
   },
   {
-    path: "/customer/account",
+    path: "/customer/account/dashboard",
     exact: true,
     main: ({ history, match }) => (
-      <AccountPage history={history} match={match} />
+      <AccountDashBoardPage history={history} match={match} />
+    ),
+  },
+  {
+    path: "/customer/account/myorder",
+    exact: true,
+    main: ({ history, match }) => (
+      <MyOrder history={history} match={match} />
+    ),
+  },
+  {
+    path: "/customer/account/billing",
+    exact: true,
+    main: ({ history, match }) => (
+      <Billing history={history} match={match} />
+    ),
+  },
+  {
+    path: "/customer/account/mywishlist",
+    exact: true,
+    main: ({ history, match }) => (
+      <MyWishlist history={history} match={match} />
+    ),
+  },
+  {
+    path: "/customer/account/addnewadress",
+    exact: true,
+    main: ({ history, match }) => (
+      <AddNewAdreess history={history} match={match} />
     ),
   },
   {

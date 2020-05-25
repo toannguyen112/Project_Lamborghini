@@ -4,8 +4,12 @@ import TopCart from "../component/TopCart/TopCart";
 import ProductCart from "../component/ProductCart/ProductCart";
 import * as action from "../Store/Action/action";
 export class TopCartContainer extends Component {
+
+ 
+  
   render() {
     const { cartList, wishList, productList } = this.props;
+   
 
     return (
       <TopCart
@@ -14,6 +18,8 @@ export class TopCartContainer extends Component {
         cartList={cartList}
         addToCart={this.props.addToCart}
         keyword={this.props.keyword}
+        success={this.props.success}
+        alerAddToCartSuccess={this.props.alerAddToCartSuccess}
       >
         {this.showProductCart(cartList)}
       </TopCart>
@@ -40,7 +46,8 @@ export class TopCartContainer extends Component {
 const mapStateToProps = (state) => ({
   cartList: state.Cart,
   wishList: state.Wish,
-  productList: state.Products
+  productList: state.Products,
+  success : state.addToCartSuccess
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -54,6 +61,9 @@ const mapDispatchToProps = (dispatch) => {
     keyword: (key) => {
       dispatch(action.keyWord(key));
     },
+    alerAddToCartSuccess : ()=>{
+      dispatch(action.alerAddToCartSuccess())
+    }
   };
 };
 
