@@ -137,16 +137,16 @@ const arrCatefory = [
     route: "special",
     cate: [
       {
-        cateName: "Backpack & Bags",
-        cateRoute: "BackpackBags",
+        cateName: "Mizuno Running Shoes",
+        cateRoute: "mizuno",
       },
       {
-        cateName: "Leather Goods",
-        cateRoute: "LeatherGoods",
+        cateName: "TecknoMonster Luggage",
+        cateRoute: "tecknomonster",
       },
       {
-        cateName: "Small Leather Goods",
-        cateRoute: "SmallLeatherGoods",
+        cateName: "MR & Looksmart Model Cars",
+        cateRoute: "mr",
       },
     ]
   },

@@ -7,7 +7,7 @@
   .item {
     position: relative;
     background-color: #fff;
-    border: 1px solid #fff; 
+    border: 1px solid #fff;
     color: #000;
     margin: 5px;
     font-size: 12px;
@@ -220,13 +220,21 @@
   .wrappSearchItem {
     position: fixed;
     top: 120px;
-    width: 190px;
+    width: 200px;
     right: 13px;
     border: 1px solid #e6e6e6;
     bottom: 0;
-    padding: 5px;
-    background-color: #fff;
     margin-top: 10px;
+    background-color: #fff;
+    transition: ease-in-out 0.5s;
+    .noResult {
+      text-align: left;
+      font-size: 12px;
+      padding: 10px;
+      &:hover {
+        background-color: #e6e6e6;
+      }
+    }
     .searchList {
       max-height: 520px;
       overflow-y: auto;
@@ -252,7 +260,6 @@
       transform: translateX(-50%);
       margin-bottom: 20px;
       button {
-        
         margin: auto;
         @include button;
         font-size: 10px;

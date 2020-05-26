@@ -42,6 +42,10 @@
             color: #fff;
           }
         }
+        .listSort--item.active {
+          background-color: #000;
+          color: #fff;
+        }
       }
     }
   }

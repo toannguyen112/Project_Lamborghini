@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import Colappse from "../Collapse/Colappse";
+import Back from "../Buttonback.jsx/Back";
 
 export default class AccountInfomation extends Component {
   render() {
     return (
-      <div className="wrappAccount">
+
+      <div className="warpperBodyRigth">
+ <div className="wrappAccount">
         <h2 className="title">EDIT ACCOUNT INFORMATION</h2>
-       <Colappse/>
+         <Colappse/>
 
         <div className="warpperEdit">
           <div className="container-fluid">
@@ -101,7 +104,7 @@ export default class AccountInfomation extends Component {
             <div className="warppbtn">
               <div className="row">
                 <div className="col-6">
-                  <button className="back">BACK</button>
+                <Back />
                 </div>
                 <div className="col-6">
                   <button className="save">SAVE</button>
@@ -111,6 +114,8 @@ export default class AccountInfomation extends Component {
           </div>
         </div>
       </div>
+      </div>
+     
     );
   }
 }

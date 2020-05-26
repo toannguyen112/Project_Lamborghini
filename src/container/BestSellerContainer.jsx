@@ -19,7 +19,7 @@ export class BestSellerContainer extends Component {
     let result = [];
     for (let i = 0; i < productList.length; i++) {
       if (productList[i].type === productType)
-        result.push(<ProductItem addToCart={this.props.addToCart} key={i} product={productList[i]} history={history} />);
+        result.push(<ProductItem alerAddToCartSuccess={this.props.alerAddToCartSuccess}  addToCart={this.props.addToCart} key={i} product={productList[i]} history={history} />);
     }
     return result;
   };
@@ -36,6 +36,9 @@ const mapDispatchToProps = (dispatch) => {
     addToCart: (cart) => {
       dispatch(action.addToCart(cart));
     },
+    alerAddToCartSuccess : ()=>{
+      dispatch(action.alerAddToCartSuccess())
+    }
   };
 };
 

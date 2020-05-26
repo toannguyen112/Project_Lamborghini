@@ -28,7 +28,7 @@ import KidPage from "../page/KidPage";
 import WomenPage from "../page/WomentPage";
 import MenPage from "../page/MenPage";
 import TshirtPage from "../page/TshirtPage";
-import  CheckoutContainer  from "../container/CheckoutContainer";
+import CheckoutContainer from "../container/CheckoutContainer";
 import AccountPage from "../page/AccountDashBoardPage";
 import SearchResultPage from "../page/SearchResultPage";
 import OneStepCheckoutPage from "../page/OneStepCheckoutPage";
@@ -37,7 +37,12 @@ import AccountDashBoardPage from "../page/AccountDashBoardPage";
 import MyOrder from "../component/MyOrder/MyOrder";
 import Billing from "../component/Billing/Billing";
 import MyWishlist from "../component/MyWishlist/MyWishlist";
-
+import AccountInfomation from "../component/AccountInfomation/AccountInfomation";
+import NewSetter from "../component/NewSetter/NewSetter";
+import RMA from "../component/RMA/RMA";
+import MizunoPage from "../page/MizunoPage";
+import TecknomonsterPage from "../page/TecknomonsterPage";
+import MrPage from "../page/MrPage";
 
 const routes = [
   {
@@ -173,7 +178,27 @@ const routes = [
       <SpecialPgae history={history} match={match} />
     ),
   },
-
+  {
+    path: "/special/mizuno",
+    exact: true,
+    main: ({ history, match }) => (
+      <MizunoPage history={history} match={match} />
+    ),
+  },
+  {
+    path: "/special/tecknomonster",
+    exact: true,
+    main: ({ history, match }) => (
+      <TecknomonsterPage history={history} match={match} />
+    ),
+  },
+  {
+    path: "/special/mr",
+    exact: true,
+    main: ({ history, match }) => (
+      <MrPage history={history} match={match} />
+    ),
+  },
 
   {
     path: "/baby",
@@ -239,7 +264,7 @@ const routes = [
     path: "/checkout",
     exact: true,
     main: ({ history, match }) => (
-      <CheckoutContainer  history={history} match={match} />
+      <CheckoutContainer history={history} match={match} />
     ),
   },
   {
@@ -252,17 +277,24 @@ const routes = [
   {
     path: "/customer/account/myorder",
     exact: true,
-    main: ({ history, match }) => (
-      <MyOrder history={history} match={match} />
-    ),
+    main: ({ history, match }) => <MyOrder history={history} match={match} />,
   },
   {
     path: "/customer/account/billing",
     exact: true,
-    main: ({ history, match }) => (
-      <Billing history={history} match={match} />
-    ),
+    main: ({ history, match }) => <Billing history={history} match={match} />,
   },
+  {
+    path: "/customer/account/newsetter",
+    exact: true,
+    main: ({ history, match }) => <NewSetter history={history} match={match} />,
+  },
+  {
+    path: "/customer/account/rma",
+    exact: true,
+    main: ({ history, match }) => <RMA history={history} match={match} />,
+  },
+
   {
     path: "/customer/account/mywishlist",
     exact: true,
@@ -276,6 +308,19 @@ const routes = [
     main: ({ history, match }) => (
       <AddNewAdreess history={history} match={match} />
     ),
+  },
+  {
+    path: "/customer/account/infomation",
+    exact: true,
+    main: ({ history, match }) => (
+      <AccountInfomation history={history} match={match} />
+    ),
+  },
+
+  {
+    path: "/customer/account/newsetter",
+    exact: true,
+    main: ({ history, match }) => <NewSetter history={history} match={match} />,
   },
   {
     path: "/result",

@@ -12,10 +12,11 @@
   background-color: #fff;
   border: 1px solid #000;
   transition: linear 0.1s;
-  padding: 15px 20px;
+  padding: 13px 5px;
+  border-radius: 0;
   text-transform: uppercase;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 2px;
   font-weight: 700;
 
@@ -70,6 +71,7 @@
   border: none;
   font-size: 10px;
   width: 100%;
+  border-radius: 0;
   font-weight: 600;
   padding: 13px 5px;
   letter-spacing: 2px;

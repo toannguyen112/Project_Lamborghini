@@ -37,22 +37,27 @@ export default class TopCart extends Component {
 
   showAlert = () => {
     if (this.props.success) {
-      return <AlertSuccess    />;
+      return <AlertSuccess />;
     }
   };
 
   showSearchItem = (productList, keyWord) => {
     let result = null;
-    if (keyWord.length > 0 && keyWord.length !== "") {
+    if (keyWord && keyWord.length > 0) {
       productList = productList.filter(
         (product) =>
           product.type.toLowerCase().indexOf(keyWord.toLowerCase().trim()) !==
           -1
       );
 
-      result = productList.map((product, index) => {
-        return <SearchItem product={product} key={index} />;
-      });
+      if (productList.length > 0) {
+        result = productList.map((product, index) => {
+          return <SearchItem product={product} key={index} />;
+        });
+      }
+      else {
+        result = <div className="noResult"  >  No Result </div>
+      }
     }
     return result;
   };
@@ -64,8 +69,8 @@ export default class TopCart extends Component {
         onClick={() => this.showSidebarCartWhislist()}
       ></div>
     ) : (
-      ""
-    );
+        ""
+      );
   };
   totalQty = () => {
     return this.props.cartList.reduce((tsl, product, index) => {
@@ -96,7 +101,7 @@ export default class TopCart extends Component {
   };
 
   render() {
-    let { productList, success } = this.props;
+    let { productList } = this.props;
     let { keyWord } = this.state;
 
     return (
@@ -179,36 +184,40 @@ export default class TopCart extends Component {
                   />
                 </div>
               ) : (
-                ""
-              )}
+                  ""
+                )}
             </div>
           ) : (
-            <div className="warpperWishList">
-              <ul className="wishList">{this.showWishItem()}</ul>
-              {this.props.wishList.length > 0 ? (
-                <div className="wappBtn">
-                  <button className="goToWhiList">go to wishlist</button>
-                </div>
-              ) : (
-                <p className="alert">
-                  YOU HAVE NO ITEMS IN YOUR SHOPPING WHISLIST.
-                </p>
-              )}
-            </div>
-          )}
+              <div className="warpperWishList">
+                <ul className="wishList">{this.showWishItem()}</ul>
+                {this.props.wishList.length > 0 ? (
+                  <div className="wappBtn">
+                    <button className="goToWhiList">go to wishlist</button>
+                  </div>
+                ) : (
+                    <p className="alert">
+                      YOU HAVE NO ITEMS IN YOUR SHOPPING WHISLIST.
+                    </p>
+                  )}
+              </div>
+            )}
         </div>
         <div
           className="wrappSearchItem"
-          style={{ display: keyWord && this.state.search ? "block" : "none" }}
+          style={{ opacity: keyWord && this.state.search ? "1" : "0" }}
         >
           <ul className="searchList">
             {this.showSearchItem(productList, keyWord)}
           </ul>
-          <Link to="/result">
-            <div className="allResoure">
-              <button>all resoure</button>
-            </div>
-          </Link>
+
+
+          {productList.length > 0 ? (
+            <Link to="/result">
+              <div className="allResoure">
+                <button>all resoure</button>
+              </div>
+            </Link>
+          ) : ""}
         </div>
 
         {this.showAlert()}

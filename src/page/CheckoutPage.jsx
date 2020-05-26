@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import Footer from "../component/Footer/Footer";
 import BestSellerContainer from "../container/BestSellerContainer";
 import { Link } from "react-router-dom";
 
