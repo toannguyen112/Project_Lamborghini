@@ -148,6 +148,10 @@ const arrCatefory = [
         cateName: "MR & Looksmart Model Cars",
         cateRoute: "mr",
       },
+      {
+        cateName: "DNA Lamborghini book",
+        cateRoute: "dna",
+      }
     ]
   },
 ];

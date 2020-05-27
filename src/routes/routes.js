@@ -43,6 +43,8 @@ import RMA from "../component/RMA/RMA";
 import MizunoPage from "../page/MizunoPage";
 import TecknomonsterPage from "../page/TecknomonsterPage";
 import MrPage from "../page/MrPage";
+import DNAPage from "../page/DNAPage";
+import NotFoundPage from "../page/NotFoundPage";
 
 const routes = [
   {
@@ -195,9 +197,12 @@ const routes = [
   {
     path: "/special/mr",
     exact: true,
-    main: ({ history, match }) => (
-      <MrPage history={history} match={match} />
-    ),
+    main: ({ history, match }) => <MrPage history={history} match={match} />,
+  },
+  {
+    path: "/special/dna",
+    exact: true,
+    main: ({ history, match }) => <DNAPage history={history} match={match} />,
   },
 
   {
@@ -332,9 +337,13 @@ const routes = [
   {
     path: "/onestepcheckout",
     exact: true,
-    main: ({ history, match }) => (
-      <OneStepCheckoutPage history={history} match={match} />
-    ),
+    main: () => <OneStepCheckoutPage />,
+  },
+
+  {
+    path: "*",
+    exact: true,
+    main: () => <NotFoundPage />,
   },
 ];
 

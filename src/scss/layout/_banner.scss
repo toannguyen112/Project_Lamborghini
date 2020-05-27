@@ -1,13 +1,21 @@
 .wrapperBanner {
-  padding: 100px 120px 0 120px;
-  
+  padding: 100px 100px 0 100px;
+
   .banner-left {
     z-index: -9;
+    .img__banner {
+      overflow: hidden;
 
-    img {
-      width: 459px;
-      height: 653px;
+     
+      img {
+        transition: ease-in-out 0.3s;
+        transform: scale(1);
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
+
     .info {
       .title-line {
         margin: 20px 0;
@@ -29,9 +37,20 @@
   }
 
   .banner-right {
-    img {
+    padding-top: 40px;
+    .img__banner {
       width: 459px;
-      height: 307px;
+      max-height: 653px;
+      overflow: hidden;
+
+      img {
+        transition: ease-in-out 0.3s;
+        transform: scale(1);
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
     .content__right {
       .title {

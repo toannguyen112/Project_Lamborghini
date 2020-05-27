@@ -1,0 +1,13 @@
+.wrapper__notfound {
+  text-align: center;
+  padding: 40px 0;
+  .title {
+    @include text(#000, 25px, 700);
+    padding: 20px 0;
+  }
+  .back {
+    @include text(#000, 12px, 700);
+    text-decoration: underline;
+    padding: 20px 0;
+  }
+}

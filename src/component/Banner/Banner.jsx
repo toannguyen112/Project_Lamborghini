@@ -2,16 +2,19 @@ import React, { Component } from 'react'
 
 export default class Banner extends Component {
     render() {
-        let {img} =this.props;
-        
+        let { img } = this.props;
+
         return (
             <div className="wrapperBanner">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
                         <div className="col-6">
 
                             <div className="banner-left">
-                                <img src= {img.img1} alt="" />
+                                <div className="img__banner">
+
+                                    <img src={img.img1} alt="" className="img-fluid"  />
+                                </div>
                                 <div className="info">
                                     <div className="title-line"></div>
                                     <p className="info_title">
@@ -28,7 +31,9 @@ export default class Banner extends Component {
                         </div>
                         <div className="col-6">
                             <div className="banner-right">
-                                <img src={img.img2} alt="" />
+                                <div className="img__banner">
+                                    <img src={img.img2} alt=""className="img-fluid"   />
+                                </div>
                                 <div className="content__right">
                                     <div className="title">
                                         <h3>MIZUNO FOR AUTOMOBILI LAMBORGHINI</h3>
